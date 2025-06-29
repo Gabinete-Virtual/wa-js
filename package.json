@@ -1,8 +1,15 @@
 {
-  "name": "@wppconnect/wa-js",
+  "name": "@gabinete-virtual/wa-js",
   "version": "3.17.7",
   "description": "WPPConnect/WA-JS is an open-source project with the aim of exporting functions from WhatsApp Web",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gabinete-Virtual/wa-js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": {
     "name": "Edgard Messias",
     "email": "edgardmessias@gmail.com",
