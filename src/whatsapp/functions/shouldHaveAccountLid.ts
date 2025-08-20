@@ -17,27 +17,14 @@
 import { exportModule } from '../exportModule';
 
 /**
- * @whatsapp WAWebSaveContactAction >= 2.3000.0
+ * @whatsapp WAWebLidMigrationUtils >= 2.3000.x
  */
-/**
- * @param user 5521980809090
- * @param userToDelete 5521980809090
- * @param name Contact Name
- * @param surname Contact Surname
- * @param syncToAddressbook Sync to Addressbook boolean
- */
-export declare function saveContactAction(
-  userToCreate: string,
-  userToDelete: string | null,
-  name?: any,
-  surname?: any,
-  syncToAddressbook?: boolean
-): Promise<undefined>;
+export declare function shouldHaveAccountLid(): boolean;
 
 exportModule(
   exports,
   {
-    saveContactAction: 'saveContactAction',
+    shouldHaveAccountLid: ['shouldHaveAccountLid'],
   },
-  (m) => m.saveContactAction
+  (m) => typeof m.shouldHaveAccountLid === 'function'
 );
