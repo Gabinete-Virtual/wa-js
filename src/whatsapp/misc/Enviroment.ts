@@ -14,10 +14,20 @@
  * limitations under the License.
  */
 
-import './events';
-import './patch';
+import { exportModule } from '../exportModule';
 
-export * from './defaultSendMessageOptions';
-export * from './functions';
-export * from './types';
-export * from './util';
+export declare const Enviroment: {
+  default: {
+    isWeb: boolean;
+    isWindows: boolean;
+    isGuest: boolean;
+  };
+};
+
+exportModule(
+  exports,
+  'Enviroment',
+  (m) =>
+    (m.default.isWeb !== undefined && m.default.isWindows !== undefined) ||
+    (m.isWeb !== undefined && m.isWindows !== undefined)
+);
