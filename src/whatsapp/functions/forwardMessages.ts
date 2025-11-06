@@ -14,10 +14,25 @@
  * limitations under the License.
  */
 
-import './events';
-import './patch';
+import { exportModule } from '../exportModule';
+import { ChatModel, MsgModel } from '../models';
 
-export * from './defaultSendMessageOptions';
-export * from './functions';
-export * from './types';
-export * from './util';
+export type ForwardMessagesParams = {
+  chat: ChatModel;
+  msgs: MsgModel[];
+  multicast: boolean;
+  includeCaption: boolean;
+  appendedText: boolean;
+};
+
+export declare function forwardMessages(
+  params: ForwardMessagesParams
+): Promise<Array<any>>;
+
+exportModule(
+  exports,
+  {
+    forwardMessages: 'forwardMessages',
+  },
+  (m, moduleId) => moduleId === 'WAWebChatForwardMessage'
+);

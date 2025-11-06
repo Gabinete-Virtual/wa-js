@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-import './events';
-import './patch';
+import { Enviroment } from '../../whatsapp';
 
-export * from './defaultSendMessageOptions';
-export * from './functions';
-export * from './types';
-export * from './util';
+/**
+ * Change the current environment device between Web and Windows.
+ */
+export function changeEnviromentDevice() {
+  Enviroment.default.isWeb = !Enviroment.default.isWeb;
+  Enviroment.default.isWindows = !Enviroment.default.isWindows;
+}
